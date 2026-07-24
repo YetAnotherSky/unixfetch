@@ -7,6 +7,11 @@
 - Unixfetch is a lightweight minimal system information tool for Unix-like systems!
 - This is a hobby project, but i will try my best to make it better if possible !
 
+
+# Preview:
+
+![Asset](assets/asset.png)
+
 ### Installation:
 
 **Disclaimer:** Before executing any script, read what it does!
@@ -19,7 +24,7 @@
 ```
 ```bash
 
-$ cd unixfetch
+ $ cd unixfetch
  $ chmod +x setup.sh
  $ ./setup.sh
 
