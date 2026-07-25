@@ -38,8 +38,11 @@ sys(){
   local INIT_SYSTEM=$(cat /proc/1/comm)
   local DATE=$(date | cut -d '+' -f1)
   local MACHINE=$(inxi -M | grep -i "product")
+  local RESOLUTION=$(inxi -G | grep -i "resolution" | cut -d ':' -f2)
   local MACHINE_OUTPUT=$(echo ${MACHINE##*:})
-  echo "$BLUE* Machine:$RESET $MACHINE_OUTPUT"
+
+  command -v inxi >/dev/null 2>&1 && echo "$BLUE* Machine:$RESET $MACHINE_OUTPUT" && echo "$BLUE* Display:$RESET $RESOLUTION"
+  
   echo "$BLUE* OS:$RESET $DISTRIBUTION $ARCHITECTURE $OS"
   echo "$BLUE* Shell:$RESET $SH"
   echo "$BLUE* Kernel:$RESET $KERNEL $KERNEL_VERSION"
